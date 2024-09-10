@@ -31,8 +31,12 @@ public class FlappyBird extends JPanel {
             this.img = img;
         }
     }
- 
 
+
+
+   //gamelogic
+   Bird bird;
+   
 
 
     FlappyBird() {
@@ -44,6 +48,9 @@ public class FlappyBird extends JPanel {
         birdImg = new ImageIcon(getClass().getResource("./flappybird.png")).getImage();
         topPipeImgImg = new ImageIcon(getClass().getResource("./toppipe.png")).getImage();
         bottomPipeImg = new ImageIcon(getClass().getResource("./bottompipe.png")).getImage();
+      
+        //bird
+        bird = new Bird(birdImg);
         
     }
 
@@ -55,5 +62,8 @@ public class FlappyBird extends JPanel {
     public void draw(Graphics g){
         //bg
         g.drawImage(backgroundImg, 0, 0, bWidth, bHeight)
+
+        //bird
+        g.drawImage(bird.img, bird.x, bird.y, bird.width, bird.height, null);
     }
 }
