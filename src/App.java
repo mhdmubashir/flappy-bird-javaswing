@@ -1,4 +1,5 @@
-import java.swing.*;
+
+import javax.swing.JFrame;
 public class App {
     public static void main(String args[]) {
         int bWidth = 360;
@@ -14,6 +15,7 @@ public class App {
         FlappyBird flappybird = new FlappyBird();
         frame.add(flappybird);
         frame.pack();
+        flappybird.requestFocus();
         frame.setVisible(true);
     }
 }
